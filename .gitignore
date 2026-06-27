@@ -1,0 +1,5 @@
+CNAME
+dist/*
+node_modules/
+Oracle.key
+package-lock.json
