@@ -282,6 +282,17 @@ body.mobile-nav-active #mobile-nav {
   font-family: "Figtree", sans-serif;
 }
 
+.tickets-venue-image-wrap {
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.tickets-venue-image {
+  width: min(100%, 480px);
+  height: auto;
+  display: inline-block;
+}
+
 #about,
 #tickets,
 #venue,
@@ -486,13 +497,47 @@ body.mobile-nav-active #mobile-nav {
   bottom: 15px;
   z-index: 996;
   display: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #f62c38;
+  color: #ffffff;
+  position: fixed;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
 }
 
-.ticket-img {
-  width: 100%;
+.back-to-top::before,
+.back-to-top::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  width: 14px;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+.back-to-top::before {
+  left: 14px;
+  transform: rotate(-45deg);
+}
+
+.back-to-top::after {
+  right: 14px;
+  transform: rotate(45deg);
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+  background: #b51f28;
+  color: #ffffff;
+}
+
+.back-to-top i {
+  display: none;
 }
 
 @media (max-width: 1199px) {
