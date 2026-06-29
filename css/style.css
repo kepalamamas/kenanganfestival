@@ -614,7 +614,7 @@ body.mobile-nav-active #mobile-nav {
   }
 }
 
-@media (max-width: 768px) and (max-aspect-ratio: 9/16) {
+@media (max-width: 768px){
   body {
     background-size: auto 100%;
     background-attachment: fixed;
@@ -680,6 +680,14 @@ body.mobile-nav-active #mobile-nav {
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  .header-ticket-detail {
+    font-size: 28px;
+  }
+
+  .text-hubungi-minsod {
+    font-size: 24px;
   }
 }
 
