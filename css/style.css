@@ -335,9 +335,9 @@ body.mobile-nav-active #mobile-nav {
 #timeandplace {
   margin: 10px auto 0;
   padding: 10px;
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  width: 100%;
+  max-width: 80%;
+  white-space: nowrap;
   line-height: 1.4;
   text-align: center;
 }
@@ -346,7 +346,7 @@ body.mobile-nav-active #mobile-nav {
   font-family: "Figtree", sans-serif;
   color: #ffffff;
   font-weight: 600;
-  font-size: 30px;
+  font-size: clamp(12px, 2.2vw, 30px);
 }
 
 .ticket-detail-card {
@@ -461,7 +461,6 @@ body.mobile-nav-active #mobile-nav {
   background-color: rgba(0, 0, 0, 0.3);
   border: 2px solid #ffffff;
   border-radius: 15px;
-  text-align: left;
 }
 
 #footer {
@@ -649,7 +648,7 @@ body.mobile-nav-active #mobile-nav {
   }
 
   #timeandplace h3 {
-    font-size: 12px;
+    font-size: clamp(11px, 2.8vw, 18px);
   }
 
   #timeandplace {
@@ -673,6 +672,14 @@ body.mobile-nav-active #mobile-nav {
 @media (max-width: 767px) {
   .section-header h2 {
     font-size: 32px;
+  }
+
+  .beli-btn {
+    max-width: 200px;
+    padding: 12px 24px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 
