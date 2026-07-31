@@ -230,34 +230,34 @@ jQuery(document).ready(function ($) {
 
   // custom code
 
-  // PRESALE2 BUY BUTTON: fetch status and toggle
-  // var $ticketButtons = $('.ticket-open-button');
-  // if (!$ticketButtons.length) return;
+  // PRESALE BUY BUTTON: fetch status and toggle
+  var $ticketButtons = $('.ticket-open-button');
+  if (!$ticketButtons.length) return;
 
   // Ensure all matching buttons are disabled until we know the status
-  // $ticketButtons.each(function () {
-  //   $(this).prop('disabled', true).attr('disabled', 'disabled').attr('aria-disabled', 'true');
-  // });
+  $ticketButtons.each(function () {
+    $(this).prop('disabled', true).attr('disabled', 'disabled').attr('aria-disabled', 'true');
+  });
 
-  // fetch('https://sodtix.com/api/v1/public-events/link-url/3be7a6aa')
-  //   .then(function (res) { return res.json(); })
-  //   .then(function (json) {
-  //     if (json && json.success && json.data && json.data.isOpen) {
-  //       var url = json.data.link_url || null;
-  //       if (url) {
-  //         $ticketButtons.each(function () {
-  //           $(this).prop('disabled', false).removeAttr('disabled').attr('aria-disabled', 'false');
-  //         });
-  //         $ticketButtons.off('click').on('click', function () { window.open(url, '_blank'); });
-  //       }
-  //     } else {
-  //       $ticketButtons.each(function () {
-  //         $(this).prop('disabled', true).attr('disabled', 'disabled').attr('aria-disabled', 'true');
-  //       });
-  //     }
-  //   })
-  //   .catch(function (err) {
-  //     console.error('Error fetching presale2 status', err);
-  //   });
+  fetch('https://sodtix.com/api/v1/public-events/link-url/idsNms71')
+    .then(function (res) { return res.json(); })
+    .then(function (json) {
+      if (json && json.success && json.data && json.data.isOpen) {
+        var url = json.data.link_url || null;
+        if (url) {
+          $ticketButtons.each(function () {
+            $(this).prop('disabled', false).removeAttr('disabled').attr('aria-disabled', 'false');
+          });
+          $ticketButtons.off('click').on('click', function () { window.open(url, '_blank'); });
+        }
+      } else {
+        $ticketButtons.each(function () {
+          $(this).prop('disabled', true).attr('disabled', 'disabled').attr('aria-disabled', 'true');
+        });
+      }
+    })
+    .catch(function (err) {
+      console.error('Error fetching presale2 status', err);
+    });
 
 });
