@@ -247,43 +247,41 @@ body.mobile-nav-active #mobile-nav {
 }
 
 #intro {
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   background: #691116;
 }
 
 #intro .intro-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .intro-slider {
   display: flex;
   width: 200%;
-  height: 100%;
   animation: introSliderLoop 8s ease-in-out infinite;
 }
 
 .intro-slide {
   flex: 0 0 50%;
   width: 50%;
-  height: 100%;
 }
 
 .intro-slide picture,
 .intro-slide img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: auto;
 }
 
 .intro-slide img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
