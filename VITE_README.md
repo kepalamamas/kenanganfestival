@@ -1,6 +1,7 @@
-# SOD Festival - Vite Setup
+# Kenangan Festival - React/Vite Setup
 
-This project is now configured with Vite for development and production builds.
+The site is now a React SPA. See [README.md](README.md) for environment setup,
+public checkout, API configuration, testing and deployment requirements.
 
 ## Available Commands
 
@@ -10,7 +11,7 @@ npm run dev
 ```
 - Starts local development server at http://localhost:3000
 - Hot module replacement (HMR) enabled
-- Automatically opens browser
+- Proxies `/api` to `DEV_API_TARGET` (default `http://localhost:4000`)
 
 ### Production Build
 ```bash
@@ -29,7 +30,7 @@ npm run preview
 
 ## Project Structure
 
-- Source files remain in root directory
+- React source lives in `src/`; `index.html` is the entry shell
 - Build output goes to `/dist` folder
 - All assets (images, fonts, libraries) are automatically optimized
 
@@ -43,10 +44,11 @@ After running `npm run build`, deploy the contents of the `/dist` folder to your
 
 ## Notes
 
-- The original HTML structure is preserved
-- All existing libraries (jQuery, Bootstrap, etc.) work as-is
-- Source maps warnings for minified libraries are normal and harmless
-- CNAME and robots.txt in root should be copied to dist for deployment
+- Existing artwork, fonts and Bootstrap CSS are reused; jQuery plugins are no longer loaded
+- Configure SPA history fallback for direct checkout/payment/ticket links
+- Images, fonts, robots.txt and sitemap.xml are included in the build
+- Keep secrets in `ticket-backend`, never in `VITE_*` variables
+- `VITE_SECRET_PAYLOAD` matches Purplecloud's existing public API format; it is browser-visible obfuscation, not a protected credential
 
 ## First Time Setup
 
@@ -56,7 +58,6 @@ After running `npm run build`, deploy the contents of the `/dist` folder to your
 
 ## What Was Changed
 
-- Added `package.json` with Vite configuration
-- Added `vite.config.js` for build settings
-- Moved Facebook Pixel noscript tag to body (HTML5 compliance)
-- All other files remain unchanged
+- Uses existing public checkout, payment returns and printable QR e-tickets
+- Added Vitest/Testing Library coverage and desktop/mobile Playwright checks
+- Preserved the existing `dist/` deployment target
