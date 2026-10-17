@@ -3,3 +3,9 @@ dist/*
 node_modules/
 Oracle.key
 package-lock.json
+.env
+.env.*
+!.env.example
+coverage/
+playwright-report/
+test-results/

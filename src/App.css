@@ -1,0 +1,832 @@
+:root {
+  --festival-red: #991c23;
+  --festival-burgundy: #4f0509;
+  --festival-yellow: #ffc834;
+  --paper: #ffffff;
+  --ink: #272426;
+  --muted: #696568;
+  --line: #e1dcdd;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+textarea,
+select {
+  letter-spacing: 0;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #e3aa09;
+  outline-offset: 3px;
+}
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  color: inherit;
+  background: transparent;
+}
+.festival-header#header {
+  display: block;
+  height: 90px;
+  padding: 12px 0;
+  background: rgba(79, 5, 9, 0.95);
+}
+.festival-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 20px;
+}
+.festival-logo {
+  width: 150px;
+  height: 66px;
+  object-fit: contain;
+}
+.festival-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.festival-links a {
+  color: #fff;
+  font-weight: 700;
+}
+.festival-menu-button {
+  display: none;
+}
+#intro.react-intro {
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+  padding: 0;
+}
+.festival-slides {
+  display: grid;
+  height: 100%;
+}
+.festival-slide {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease;
+}
+.festival-slide.is-current {
+  opacity: 1;
+  visibility: visible;
+}
+.festival-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.festival-countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 720px;
+  margin: auto;
+  padding: 24px;
+  background: #5c0d12;
+  border-radius: 8px;
+  text-align: center;
+}
+.countdown-unit {
+  display: grid;
+  gap: 6px;
+}
+.countdown-unit strong {
+  font:
+    700 60px 'Fraunces',
+    serif;
+  line-height: 1;
+}
+.countdown-unit span {
+  font-weight: 700;
+  font-size: 16px;
+}
+.festival-ticket-list {
+  max-width: 520px;
+  margin: auto;
+  display: grid;
+  gap: 24px;
+}
+.festival-ticket.ticket-detail-card {
+  border-radius: 8px;
+  background: var(--festival-burgundy);
+}
+.festival-ticket .header-ticket-detail {
+  font-size: 30px;
+  overflow-wrap: anywhere;
+  letter-spacing: 0;
+}
+.festival-ticket-price {
+  font-size: 30px;
+  font-weight: 800;
+}
+.festival-ticket .beli-btn {
+  border-radius: 6px;
+  max-width: 100%;
+  font-size: 20px;
+}
+.sale-notice {
+  text-align: center;
+}
+.sale-notice button {
+  margin-top: 18px;
+}
+.festival-playlist {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+.about-us-content {
+  text-align: center;
+}
+.festival-contact {
+  margin-top: 22px;
+}
+.festival-contact h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.festival-contact a {
+  color: #ff727e;
+  overflow-wrap: anywhere;
+}
+.festival-socials {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.festival-socials a {
+  color: #fff;
+}
+.festival-back-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: var(--festival-red);
+  color: white;
+  z-index: 10;
+}
+.purchase-shell {
+  min-height: 100vh;
+  background: rgba(79, 5, 9, 0.75);
+}
+.purchase-header {
+  min-height: 90px;
+  padding: 12px max(24px, calc((100% - 1120px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--festival-burgundy);
+  border-bottom: 1px solid #82363b;
+}
+.purchase-header img {
+  width: 142px;
+  height: 64px;
+  object-fit: contain;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  font-weight: 600;
+}
+.purchase-main {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 40px 0 64px;
+}
+.purchase-main h1 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.purchase-main h2 {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.purchase-main p {
+  line-height: 1.6;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--festival-yellow);
+}
+.page-heading {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.checkout-timer {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.checkout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.checkout-form {
+  min-width: 0;
+  position: relative;
+  padding: 12px 28px;
+  background: var(--paper);
+  border-radius: 8px;
+  color: var(--ink);
+}
+.checkout-form h2,
+.checkout-form p,
+.order-summary h2,
+.order-summary p,
+.voucher-ticket h1,
+.voucher-ticket h2,
+.voucher-ticket p {
+  color: inherit;
+}
+.close-checkout {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  color: var(--muted);
+}
+.form-section {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.form-section:last-child {
+  border-bottom: 0;
+}
+.form-section h2 {
+  margin: 0 0 22px;
+}
+.section-title {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.input-field input,
+.input-field select,
+.input-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #c9c2c5;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 400;
+  min-height: 46px;
+}
+.quantity-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.quantity-row label {
+  margin: 0;
+}
+.quantity-control {
+  display: grid;
+  grid-template-columns: 40px 48px 40px;
+  align-items: center;
+  gap: 4px;
+}
+.quantity-control .icon-button {
+  width: 40px;
+  height: 40px;
+  border-color: var(--line);
+}
+.quantity-control input {
+  width: 48px;
+  height: 40px;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+.quantity-control input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 22px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.consent input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex: 0 0 18px;
+  accent-color: var(--festival-red);
+}
+.checkout-terms {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.checkout-terms p {
+  margin-top: 12px;
+}
+.verification {
+  margin: 20px 0;
+  min-height: 65px;
+}
+.purchase-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: var(--festival-yellow);
+  color: var(--festival-burgundy);
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.4;
+}
+.purchase-button:hover {
+  color: var(--festival-burgundy);
+  background: #ffda70;
+}
+.pay-button {
+  width: 100%;
+  background: var(--festival-red);
+  color: white;
+}
+.pay-button:hover {
+  background: var(--festival-burgundy);
+  color: white;
+}
+.text-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--festival-red);
+  font-size: 13px;
+  text-decoration: underline;
+}
+.form-error {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-left: 3px solid #ed7d89;
+  background: #fff0f2;
+  color: #7d1221 !important;
+  overflow-wrap: anywhere;
+}
+.status-message {
+  padding: 30px 0;
+}
+.order-summary {
+  position: sticky;
+  top: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  color: var(--ink);
+  background: white;
+}
+.order-summary > img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.summary-content {
+  padding: 24px;
+}
+.summary-content .eyebrow {
+  color: var(--festival-red);
+}
+.summary-content h2 {
+  margin-bottom: 18px;
+}
+.summary-content > p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.summary-content dl {
+  margin: 24px 0 12px;
+  font-size: 14px;
+}
+.summary-content dl > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 12px 0;
+}
+.summary-content dd {
+  margin: 0;
+  white-space: nowrap;
+}
+.summary-content dt {
+  font-weight: 400;
+}
+.summary-total {
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 17px;
+  font-weight: 800;
+}
+.summary-total dt {
+  font-weight: 800;
+}
+.summary-content .summary-note {
+  font-size: 12px;
+  color: var(--muted);
+}
+.purchase-footer {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: min(1120px, calc(100% - 48px));
+  margin: auto;
+  padding: 24px 0;
+  border-top: 1px solid #985055;
+  font-size: 12px;
+}
+.purchase-footer a {
+  color: #ffdb86;
+  overflow-wrap: anywhere;
+}
+.result-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+  padding: 30px 0;
+}
+.result-artwork {
+  width: 100%;
+  height: auto;
+}
+.result-content h1 {
+  margin-bottom: 20px;
+}
+.result-content > p {
+  margin-bottom: 20px;
+}
+.result-icon {
+  color: var(--festival-yellow);
+  margin-bottom: 24px;
+}
+.order-reference {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  opacity: 0.8;
+}
+.result-back {
+  display: flex;
+  width: fit-content;
+  margin-top: 24px;
+}
+.ticket-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.purchase-button.secondary {
+  background: transparent;
+  border-color: #c99e9f;
+  color: white;
+}
+.voucher-ticket {
+  overflow: hidden;
+  margin-bottom: 32px;
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+  break-after: page;
+}
+.voucher-header > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3.3 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+.voucher-header > div {
+  padding: 28px 32px;
+  background: #fff6d6;
+}
+.voucher-header .eyebrow {
+  color: var(--festival-red);
+}
+.voucher-header h1 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+.ticket-counter {
+  display: inline-block;
+  margin-left: 20px;
+  font-weight: 700;
+}
+.voucher-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 36px;
+  padding: 32px;
+}
+.ticket-details {
+  margin: 22px 0 0;
+  font-size: 14px;
+}
+.ticket-details > div {
+  display: grid;
+  grid-template-columns: 155px minmax(0, 1fr);
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+}
+.ticket-details dt {
+  font-weight: 600;
+  color: var(--muted);
+}
+.ticket-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.voucher-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+.voucher-qr img,
+.qr-placeholder {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+}
+.qr-placeholder {
+  display: grid;
+  place-items: center;
+  background: #f4f1f2;
+}
+.voucher-qr strong {
+  font-size: 16px;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+.voucher-qr span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.voucher-terms {
+  padding: 24px 32px 32px;
+  border-top: 1px dashed #d3b7b9;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.voucher-terms h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.voucher-terms a {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 767px) {
+  .festival-header#header {
+    height: 76px;
+  }
+  .festival-logo {
+    width: 125px;
+    height: 52px;
+  }
+  .festival-menu-button {
+    display: inline-flex;
+  }
+  .festival-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    background: var(--festival-burgundy);
+    border-top: 1px solid #985055;
+  }
+  .festival-links.is-open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .festival-countdown {
+    gap: 12px;
+    padding: 20px 12px;
+  }
+  .countdown-unit strong {
+    font-size: 38px;
+  }
+  .countdown-unit span {
+    font-size: 12px;
+  }
+  .purchase-header {
+    min-height: 76px;
+    padding: 10px 16px;
+  }
+  .purchase-header img {
+    width: 112px;
+    height: 52px;
+  }
+  .purchase-header .back-link {
+    font-size: 12px;
+  }
+  .purchase-main {
+    width: calc(100% - 32px);
+    padding: 28px 0 40px;
+  }
+  .purchase-main h1 {
+    font-size: 28px;
+  }
+  .purchase-main h2 {
+    font-size: 19px;
+  }
+  .checkout-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+  .order-summary {
+    position: static;
+    order: -1;
+  }
+  .order-summary > img {
+    aspect-ratio: 3 / 1;
+  }
+  .summary-content {
+    padding: 20px;
+  }
+  .checkout-form {
+    padding: 8px 20px;
+  }
+  .field-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .page-heading {
+    gap: 12px;
+  }
+  .checkout-timer {
+    font-size: 14px;
+  }
+  .purchase-footer {
+    width: calc(100% - 32px);
+  }
+  .result-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 0;
+  }
+  .result-artwork {
+    max-height: 220px;
+    object-fit: cover;
+  }
+  .ticket-toolbar {
+    align-items: flex-start;
+  }
+  .ticket-toolbar .purchase-button {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .voucher-header > img {
+    aspect-ratio: 2 / 1;
+  }
+  .voucher-header > div {
+    padding: 22px 20px;
+  }
+  .voucher-content {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 24px 20px;
+    gap: 28px;
+  }
+  .ticket-details > div {
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 12px;
+  }
+  .voucher-terms {
+    padding: 24px 20px;
+  }
+  .ticket-counter {
+    display: block;
+    margin: 8px 0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .festival-slide {
+    transition: none;
+  }
+}
+@media print {
+  body,
+  .purchase-shell {
+    background: white !important;
+    color: black;
+  }
+  .purchase-header,
+  .purchase-footer,
+  .ticket-toolbar {
+    display: none;
+  }
+  .purchase-main {
+    width: 100%;
+    padding: 0;
+  }
+  .voucher-ticket {
+    border: 1px solid #bbb;
+    border-radius: 0;
+    margin: 0;
+    print-color-adjust: exact;
+  }
+  .voucher-content {
+    grid-template-columns: minmax(0, 1fr) 220px;
+  }
+  .voucher-header > img {
+    max-height: 160px;
+  }
+}
